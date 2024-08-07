@@ -7,8 +7,17 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh 'mvn --version'
-				echo 'Building..'
+				// sh 'mvn --version'
+				// echo 'Building..'
+				echo "Build"
+				echo "PATH = $PATH"
+				echo "M2_HOME = $M2_HOME"
+				echo "BUILD_NUMBER = $env.BUILD_NUMBER"
+				echo "BUILD_ID = $env.BUILD_ID"
+				echo "BUILD_URL = $env.BUILD_URL"
+				echo "JOB_NAME = $env.JOB_NAME"
+				
+
 				
 			}
 		}
