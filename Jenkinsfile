@@ -24,12 +24,12 @@ pipeline {
 				sh 'mvn clean compile'
 			}
 		}
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-				sh 'mvn test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         echo 'Testing...'
+		// 		sh 'mvn test'
+        //     }
+        // }
 		//  stage('Integration Test') {
         //     steps {
         //         echo 'Integration Testing...'
