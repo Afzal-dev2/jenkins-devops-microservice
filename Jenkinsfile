@@ -48,7 +48,7 @@ pipeline {
 				// sh 'docker'
 				// docker build -t afzalwd/currency-exchange-devops:$env.BUILD_TAG
 				script {
-					docker.build("afzalwd/currency-exchange-devops:$env.BUILD_TAG");
+					dockerImage = docker.build("afzalwd/currency-exchange-devops:$env.BUILD_TAG");
 				}
 			}
 		}
@@ -57,8 +57,8 @@ pipeline {
 			steps {
 				script{
 					docker.withRegistry('','dockerhub'){
-						docker.push();
-						docker.push('latest');
+						dockerImage.push();
+						dockerImage.push('latest');
 					}
 					
 				}
